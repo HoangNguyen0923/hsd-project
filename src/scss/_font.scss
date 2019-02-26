@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Noto Sans Light JP';
+  src: local("Noto Sans CJK JP"),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-Light.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-Light.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-K=Light.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: local("Noto Sans CJK JP"),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-Thin.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-Thin.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosansjapanese/v5/NotoSansJP-Thin.otf) format('opentype');
+}
+
+$font-normal: 'Noto Sans JP', sans-serif;
+$font-light: 'Noto Sans Light JP', sans-serif;
