@@ -154,7 +154,7 @@ body {
     content: "";
   }
 
-  li:hover {
+  li:active {
     background-color: rgba($color: #87ceff, $alpha: 0.4);
     border-radius: 7%;
   }
