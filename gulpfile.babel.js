@@ -41,7 +41,7 @@ export function cssbundle() {
 }
 
 export function css(){
-  return gulp.src('./src/scss/**/*.scss')
+  return gulp.src('./src/scss/style.scss')
     .pipe(sass().on('error',sass.logError))
     .pipe(cssconcat('style.css'))
     .pipe(cssclean())
