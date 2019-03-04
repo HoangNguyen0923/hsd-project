@@ -1,0 +1,163 @@
+.pageHeader.work {
+  .right-logo {
+    margin-block-start: 2em;
+  }
+}
+.work .mainContent {
+  @media #{$mq-medium} {
+    .workContent {
+      width: 70%;
+    }
+    .Product {
+      width: 70%;
+    }
+  }
+  @media #{$mq-large} {
+    .workContent {
+      width: 50%;
+    }
+    .Product {
+      width: 50%;
+    }
+  }
+  .workContent {
+    margin-block-end: 2em;
+    padding-inline-start: 2%;
+  }
+  .productTitle {
+    text-align: center;
+    font-family: $font-normal;
+    font-size: 1.25em;
+    letter-spacing: 0.1em;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-block-end: 0.75em;
+  }
+  .Product {
+    height: 65vh;
+    padding-inline-end: 1%;
+    padding-inline-start: 1%;
+  }
+}
+
+.workContent {
+  @media #{$mq-small} {
+    padding: 0 !important;
+    a:hover::after {
+      display: inline;
+    }
+  
+    img:hover {
+      opacity: 0.3;
+      transition: ease-in-out 0.3s;
+    }
+  }
+  img {
+    width: 32%;
+    object-fit: cover;
+    border-radius: 1%;
+    margin-block-end: 1em;
+    margin-block-start: 1em;
+
+    @media #{$mq-small} {
+      width: 30%;
+      padding-inline-start: 0.6em;
+      padding-inline-end: 0.5em;
+      margin-block-end: 0.25em;
+    }
+  }
+  a {
+    position: relative;
+  }
+  a::after {
+    content: 'New open';
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -20%;
+    font-family: $font-normal;
+    font-size: 0.75em;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @media #{$mq-small} {
+      bottom: 6.5em;
+      display: none;
+      font-size: 1em;
+    }
+    @media #{$mq-medium} {
+      bottom: 6em;
+    }
+  }
+}
+
+.Product {
+  @media #{$mq-small} {
+    padding: 0 !important;
+    height: auto !important;
+
+    a:hover::after {
+      display: inline;
+    }
+  
+    img:hover {
+      opacity: 0.3;
+      transition: ease-in-out 0.3s;
+    }
+    .erav {
+      left: 65% !important;
+    }
+  }
+  img {
+    width: 49%;
+    object-fit: cover;
+    border-radius: 1%;
+  }
+
+  a {
+    position: relative;
+  }
+
+  a::after {
+    position: absolute;
+    top: 4em;
+    left: 0;
+    font-family: $font-normal;
+    color: black;
+    font-size: 0.85em;
+    padding-inline-start: 0.25em;
+    padding-inline-end: 0.25em;
+
+    @media #{$mq-small} {
+      top: -11em;
+      display: none;
+    }
+    @media #{$mq-large} {
+    }
+  }
+
+  a:nth-child(1)::after {
+    content: 'ＤＳＳは医療機器をコンパクトに収納することで、1つの空間をある時は診療スペースとして、またある時はた医院長室、カウンセリングルームとして、多目的に使い分けることができる新システムです。空間の価値を2倍にも3倍にも広げます。';
+  }
+
+  a:nth-child(2)::after {
+    content: 'ヨシダのユニット「エクシードＣｓ」「セリオ2」に合わせたデザインとカラーやオプション、様々な組み合わせから選ぶコンパクトな診療キャビネットです。ユニットに合わせた診療室のコーディネイトが可能です。';
+  }
+  p {
+    display: inline;
+    position: relative;
+    font-family: $font-normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .dss {
+    left: 20%;
+  }
+  .erav {
+    left: 60%;
+  }
+}

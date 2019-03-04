@@ -31,7 +31,6 @@
 .about {
   .mainDescription {
     padding-inline-start: 1em !important;
-    padding-inline-end: 1em !important;
   }
 }
 
@@ -220,7 +219,7 @@
     li.act {
       margin-block-end: 2em;
       @media #{$mq-small} {
-        margin-block-end: 3em;
+        margin-block-end: 2.5em;
       }
     }
     li.act::after {
@@ -231,7 +230,7 @@
       left: 50%;
       transform: translate(-50%);
       @media #{$mq-small} {
-        bottom: -2em;
+        bottom: -1.75em;
       }
     }
     li.last {
