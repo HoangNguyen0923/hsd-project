@@ -1,6 +1,8 @@
-@import '_font.scss';
+@import 'default';
+@import 'mediaquery';
+@import 'font';
 @import 'home.scss';
 @import 'concept.scss';
 @import 'about.scss';
 @import 'work.scss';
-@import 'detail.scss';
+// @import 'detail.scss';

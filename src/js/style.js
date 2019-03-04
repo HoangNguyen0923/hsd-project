@@ -1,91 +1,92 @@
 function initMap() {
-  var styledMapType = new google.maps.StyledMapType(
+  let styledMapType = new google.maps.StyledMapType(
     [
       {
-        "featureType": "transit",
-        "elementType": "labels.icon",
-        "stylers": [
+        'featureType': 'transit',
+        'elementType': 'labels.icon',
+        'stylers': [
           {
-            "hue": "#cc3300",
-            "saturation": 0
-          }
-        ]
+            'hue': '#cc3300',
+            'saturation': 0,
+          },
+        ],
       },
       {
-        "elementType": "geometry",
-        "stylers": [
+        elementType: 'geometry',
+        stylers: [
           {
-            "saturation": -100
-          }
-        ]
+            'saturation': -100,
+          },
+        ],
       },
       {
-        "featureType": "administrative",
-        "elementType": "labels.icon",
-        "stylers": [
+        featureType: 'administrative',
+        elementType: 'labels.icon',
+        stylers: [
           {
-            "saturation": -100
-          }
-        ]
+            saturation: -100,
+          },
+        ],
       },
       {
-        "featureType": "poi",
-        "elementType": "labels.icon",
-        "stylers": [
+        'featureType': 'poi',
+        'elementType': 'labels.icon',
+        'stylers': [
           {
-            "saturation": -100
-          }
-        ]
+            'saturation': -100,
+          },
+        ],
       },
       {
-        "featureType": "road",
-        "elementType": "labels.icon",
-        "stylers": [
+        'featureType': 'road',
+        'elementType': 'labels.icon',
+        stylers: [
           {
-            "saturation": -100
-          }
-        ]
+            'saturation': -100,
+          },
+        ],
       },
       {
-        "featureType": "poi.business",
-        "elementType": "labels.icon",
-        "stylers": [
+        'featureType': 'poi.business',
+        'elementType': 'labels.icon',
+        'stylers': [
           {
-            "visibility": "off"
-          }
-        ]
+            visibility: 'off',
+          },
+        ],
       },
       {
-        "elementType": "labels.text.fill",
-        "stylers": [
+        'elementType': 'labels.text.fill',
+        stylers: [
           {
-            "saturation": -100
-          }
-        ]
+            'saturation': -100,
+          },
+        ],
       },
-    ]);
+    ]
+);
 
-  var myLatLng = { lat: 35.713757, lng: 139.778793 };
+  let myLatLng = { lat: 35.713757, lng: 139.778793 };
 
-  var map = new google.maps.Map(document.getElementById('map'), {
+  let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 17,
     center: myLatLng,
     mapTypeControl: false,
-    scrollwheel: false
+    scrollwheel: false,
   });
 
-  var image = '/asset/img/marker.png';
-  var marker = new google.maps.Marker({
+  let image = '/asset/img/marker.png';
+  let marker = new google.maps.Marker({
     position: myLatLng,
-    map: map,
-    icon: image
+    map,
+    icon: image,
   });
   map.mapTypes.set('styled map', styledMapType);
   map.setMapTypeId('styled map');
 }
 
 
-$(function () {
+$(() => {
   var images_slider = $(".slider_with_button img");
   var images_detail = $(".img-ul li")
   var output = '<ul id="dots">';
@@ -127,37 +128,37 @@ function checkIsCurrent() {
 function selectImg() {
 
   $('#dots li.selected').removeClass('selected');
-  var q = this.className;
+  let q = this.className;
   q--;
 
-  var curPhoto = $('.slider_with_button img.current');
-  var nextPhoto = $('.slider_with_button img').eq(q);
+  let curPhoto = $('.slider_with_button img.current');
+  let nextPhoto = $('.slider_with_button img').eq(q);
 
-  var curDetail = $('.img-ul li.current');
-  var nextDetail = $('.img-ul li').eq(q);
+  let curDetail = $('.img-ul li.current');
+  let nextDetail = $('.img-ul li').eq(q);
 
   $(this).addClass('selected');
 
   curPhoto.removeClass('current').addClass('previous');
   nextPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000,
-    function () {
+    () => {
       curPhoto.removeClass('previous');
     });
 
   curDetail.removeClass('current').addClass('previous');
   nextDetail.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 },
-    function () {
+    () => {
       curDetail.removeClass('previous');
     });
   checkIsCurrent();
 }
 
 function newImage() {
-  var changePhoto = this.id;
+  let changePhoto = this.id;
 
-  var curDot = $('#dots li.selected').removeClass('selected');
-  var curPhoto = $('.slider_with_button img.current');
-  var curDetail = $('.img-ul li.current');
+  let curDot = $('#dots li.selected').removeClass('selected');
+  let curPhoto = $('.slider_with_button img.current');
+  let curDetail = $('.img-ul li.current');
 
   if (changePhoto == 'next') {
     var nextPhoto = curPhoto.next();
@@ -187,25 +188,25 @@ function newImage() {
 
   curPhoto.removeClass('current').addClass('previous');
   nextPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000,
-    function () {
+    () => {
       curPhoto.removeClass('previous');
     });
 
   curDetail.removeClass('current').addClass('previous');
   nextDetail.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 },
-    function () {
+    () => {
       curDetail.removeClass('previous');
     });
   checkIsCurrent();
 }
 
 function moveImg() {
-  var curDot = $('#dots li.selected').removeClass('selected');
-  var curPhoto = $('.slider_with_button img.current');
-  var nextPhoto = curPhoto.next();
-  var nextDot = curDot.next();
-  var curDetail = $('.img-ul li.current');
-  var nextDetail = curDetail.next();
+  let curDot = $('#dots li.selected').removeClass('selected');
+  let curPhoto = $('.slider_with_button img.current');
+  let nextPhoto = curPhoto.next();
+  let nextDot = curDot.next();
+  let curDetail = $('.img-ul li.current');
+  let nextDetail = curDetail.next();
   if (nextPhoto.length == 0) {
     nextPhoto = $('.slider_with_button img:first');
     nextDot = $('#dots li:first');
@@ -214,32 +215,35 @@ function moveImg() {
   nextDot.addClass('selected');
   curPhoto.removeClass('current').addClass('previous');
   nextPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000,
-    function () {
+    () => {
       curPhoto.removeClass('previous');
     });
 
   curDetail.removeClass('current').addClass('previous');
   nextDetail.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 },
-    function () {
+    () => {
       curDetail.removeClass('previous');
     });
   checkIsCurrent();
 }
 
-$(function(){
+$(() => {
   var imageHeight = $('.slider_with_button').children('img').height();
   $('.slider_with_button').css('height',imageHeight);
+  var fullScreenHeight = $('.contentPage').height();
+  $('.concept').css('height',fullScreenHeight);
 });
 
-$(window).resize(function(){
+$(window).resize(() => {
   var imageHeight = $('.slider_with_button').children('img').height();
   $('.slider_with_button').css('height',imageHeight);
-
+  var fullScreenHeight = $('.contentPage').height();
+  $('.concept').css('height',fullScreenHeight);
 });
 
-//Add/Remove Class open for nav-icon.
-$(document).ready(function(){
-  $('.nav-icon').click(function(){
+// Add/Remove Class open for nav-icon.
+$(document).ready(() => {
+  $('.nav-button').click(function(){
     $(this).toggleClass('open');
   });
 });
